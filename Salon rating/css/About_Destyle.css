@@ -1,0 +1,30 @@
+﻿body {
+    background-image: url('../images/pattern_1.jpg');
+}
+#Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image img {
+    float: left;
+    border-radius: 10px;
+    margin-right: 25px;
+}
+
+.image {
+    margin-left: 95px;
+    margin-right: 95px;
+    padding: 2rem;
+}
+.card{
+   margin-left: 500px;
+   width: 700px;
+
+}
+
+
+
+
+

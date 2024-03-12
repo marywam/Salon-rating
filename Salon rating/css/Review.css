@@ -1,0 +1,22 @@
+﻿body {
+    background-image: url('../images/pattern_1.jpg');
+}
+
+.star-group{
+    display: inline-block;
+}
+
+.container .star-group input {
+    display: none;
+}
+
+.star-group label {
+    font-size: 20px;
+    color: #444;
+    padding: 1px;
+    cursor: pointer;
+}
+
+.star-group input:checked ~ label {
+    color: #ffca08;
+}

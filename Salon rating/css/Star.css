@@ -1,0 +1,21 @@
+﻿body {
+    background-image: url('../images/pattern_1.jpg');
+}
+
+.rating{
+    display: inline-block;
+}
+.container .rating input {
+    display: none;
+}
+.rating label{
+    font-size : 20px;
+    color: #444;
+    padding: 10px;
+    cursor:pointer;
+    
+}
+
+.rating input:checked ~label{
+    color: #ffca08;
+}

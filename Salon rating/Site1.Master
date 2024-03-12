@@ -1,0 +1,134 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="Salon_rating.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+
+    <!--Bootstrap css -->
+    <link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!--Datatables css-->
+    <link href="Datatables/css/dataTables.dataTables.min.css" rel="stylesheet" />
+     
+    <!--Fontawesome css-->
+    <link href="font%20awesome/css/all.css" rel="stylesheet" />
+
+    <!--Custom css-->
+    <link href="css/Custom.css" rel="stylesheet" />
+
+    <!--jquery js-->
+    <script src="Bootstrap/js/jquery-3.3.1.slim.min.js"></script>
+
+    <!--Popper js-->
+    <script src="Bootstrap/js/popper.min.js"></script>
+
+    <!--bootstrap js-->
+    <script src="Bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!--Database js-->
+    <script src="Datatables/js/dataTables.min.js"></script>
+    <!--Datatables css-->
+    <link href="Datatables/css/dataTables.dataTables.min.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+        
+        <div>
+            <nav class="navbar navbar-expand-lg navbar-light">
+               <a class="navbar-brand" href="Home%20Page.aspx""><svg id="svg" fill="#000000" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="-51.55 -51.55 374.43 374.43" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"><path transform="translate(-51.55, -51.55), scale(11.7009375)" d="M16,28.990433568755783C19.086850591419896,29.19198810174121,22.080248933008207,28.051382499119114,24.555757771376655,26.19635506140396C27.159709588846752,24.24507862359537,29.167203805247926,21.61098452220734,30.03341135229133,18.474469052789427C30.975582147309638,15.062892596898065,31.77181949880608,10.926913282608254,29.52878426694153,8.189152761672938C27.32679076861116,5.501486165337834,22.95080065538329,7.061479774499394,19.693049381591386,5.853430215146815C16.397832962419947,4.631487712913378,14.061412924142816,0.5475602225941136,10.602650613950797,1.1709044369225428C7.07975526108988,1.8058068207664464,4.543922582975639,5.355024759187769,3.4850157632727043,8.774470482021563C2.5399716370415937,11.826228233696765,4.525964389269126,14.800040867357925,5.433527135064395,17.863154257012013C6.1980847208053,20.4436111883864,6.479812842730464,23.185492982675935,8.333061627081412,25.137101350124126C10.363869604245489,27.275692711619072,13.057071245500124,28.798276347939417,16,28.990433568755783" fill="#e23c3c" strokewidth="0"></path></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="5.96937"> <g> <g> <path d="M24.736,133.023c-4.309,0-7.8,3.493-7.8,7.8v13.862c0,11.954,10.499,21.668,23.399,21.668 c13.119,0,23.399-12.562,23.399-28.599V9.095c0-4.303-3.488-7.8-7.8-7.8c-4.309,0-7.8,3.497-7.8,7.8v138.66 c0,7.438-4.118,12.999-7.8,12.999c-4.227,0-7.799-2.777-7.799-6.068v-13.862C32.536,136.516,29.047,133.023,24.736,133.023z"></path> <path d="M50.735,185.021c-4.309,0-7.8,3.494-7.8,7.8v13.863c0,11.953,10.499,21.667,23.399,21.667 c13.119,0,23.399-12.562,23.399-28.599V9.095c0-4.303-3.489-7.8-7.8-7.8c-4.309,0-7.8,3.497-7.8,7.8v190.658 c0,7.439-4.118,13-7.8,13c-4.228,0-7.8-2.778-7.8-6.068v-13.863C58.535,188.515,55.046,185.021,50.735,185.021z"></path> <path d="M112.265,238.751V7.8c0-4.303-3.488-7.8-7.8-7.8c-4.309,0-7.8,3.497-7.8,7.8v230.952c0,4.306,3.491,7.8,7.8,7.8 C108.771,246.551,112.265,243.057,112.265,238.751z"></path> <path d="M141.652,241.524l6.525-91.073c0.426-4.286-2.707-8.104-6.99-8.536c-4.289-0.422-8.107,2.706-8.531,6.992l-6.527,91.078 c-0.427,4.276,2.704,8.1,6.989,8.531C137.401,248.933,141.225,245.804,141.652,241.524z"></path> <path d="M179.513,271.246c4.26-0.65,7.19-4.632,6.54-8.882l-16.163-89.865c-0.645-4.255-4.616-7.185-8.881-6.54 c-4.256,0.65-7.186,4.631-6.541,8.887l16.168,89.859C171.277,268.96,175.257,271.895,179.513,271.246z"></path> <path d="M146.933,9.095V79.1c4.803-0.239,10.003,0.137,15.599,1.19V9.095c0-4.303-3.488-7.8-7.8-7.8 C150.426,1.295,146.933,4.792,146.933,9.095z"></path> <path d="M136.533,80.974V9.095c0-4.303-3.488-7.8-7.8-7.8c-4.309,0-7.8,3.497-7.8,7.8v83.337l0.328-0.427 C125.25,86.829,130.389,83.162,136.533,80.974z"></path> <path d="M246.176,90.525c7.262-4.856,10.278-13.078,6.733-18.372c-3.539-5.304-12.288-5.667-19.55-0.81 c-6.312,4.217-9.404,10.981-7.77,16.166l-17.306,6.942c-1.798-1.176-3.936-1.866-6.246-1.866c-4.367,0-8.125,2.48-10.049,6.083 c-20.449-10.141-53.101-21.797-68.025-2.401l53.588,7.754l-53.588,7.751c14.924,19.395,47.576,7.736,68.025-2.402 c1.924,3.598,5.682,6.083,10.049,6.083c1.458,0,2.834-0.302,4.123-0.789l19.403,7.784c-1.528,5.162,1.544,11.839,7.8,16.014 c7.257,4.859,16.011,4.489,19.556-0.808c3.534-5.301,0.518-13.522-6.739-18.375c-2.833-1.886-5.885-2.958-8.779-3.281 l-24.15-9.693c0.152-0.736,0.233-1.501,0.233-2.285c0-0.147-0.041-0.287-0.046-0.432l24.531-9.852 C240.687,93.343,243.531,92.288,246.176,90.525z"></path> </g> </g> </g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M24.736,133.023c-4.309,0-7.8,3.493-7.8,7.8v13.862c0,11.954,10.499,21.668,23.399,21.668 c13.119,0,23.399-12.562,23.399-28.599V9.095c0-4.303-3.488-7.8-7.8-7.8c-4.309,0-7.8,3.497-7.8,7.8v138.66 c0,7.438-4.118,12.999-7.8,12.999c-4.227,0-7.799-2.777-7.799-6.068v-13.862C32.536,136.516,29.047,133.023,24.736,133.023z"></path> <path d="M50.735,185.021c-4.309,0-7.8,3.494-7.8,7.8v13.863c0,11.953,10.499,21.667,23.399,21.667 c13.119,0,23.399-12.562,23.399-28.599V9.095c0-4.303-3.489-7.8-7.8-7.8c-4.309,0-7.8,3.497-7.8,7.8v190.658 c0,7.439-4.118,13-7.8,13c-4.228,0-7.8-2.778-7.8-6.068v-13.863C58.535,188.515,55.046,185.021,50.735,185.021z"></path> <path d="M112.265,238.751V7.8c0-4.303-3.488-7.8-7.8-7.8c-4.309,0-7.8,3.497-7.8,7.8v230.952c0,4.306,3.491,7.8,7.8,7.8 C108.771,246.551,112.265,243.057,112.265,238.751z"></path> <path d="M141.652,241.524l6.525-91.073c0.426-4.286-2.707-8.104-6.99-8.536c-4.289-0.422-8.107,2.706-8.531,6.992l-6.527,91.078 c-0.427,4.276,2.704,8.1,6.989,8.531C137.401,248.933,141.225,245.804,141.652,241.524z"></path> <path d="M179.513,271.246c4.26-0.65,7.19-4.632,6.54-8.882l-16.163-89.865c-0.645-4.255-4.616-7.185-8.881-6.54 c-4.256,0.65-7.186,4.631-6.541,8.887l16.168,89.859C171.277,268.96,175.257,271.895,179.513,271.246z"></path> <path d="M146.933,9.095V79.1c4.803-0.239,10.003,0.137,15.599,1.19V9.095c0-4.303-3.488-7.8-7.8-7.8 C150.426,1.295,146.933,4.792,146.933,9.095z"></path> <path d="M136.533,80.974V9.095c0-4.303-3.488-7.8-7.8-7.8c-4.309,0-7.8,3.497-7.8,7.8v83.337l0.328-0.427 C125.25,86.829,130.389,83.162,136.533,80.974z"></path> <path d="M246.176,90.525c7.262-4.856,10.278-13.078,6.733-18.372c-3.539-5.304-12.288-5.667-19.55-0.81 c-6.312,4.217-9.404,10.981-7.77,16.166l-17.306,6.942c-1.798-1.176-3.936-1.866-6.246-1.866c-4.367,0-8.125,2.48-10.049,6.083 c-20.449-10.141-53.101-21.797-68.025-2.401l53.588,7.754l-53.588,7.751c14.924,19.395,47.576,7.736,68.025-2.402 c1.924,3.598,5.682,6.083,10.049,6.083c1.458,0,2.834-0.302,4.123-0.789l19.403,7.784c-1.528,5.162,1.544,11.839,7.8,16.014 c7.257,4.859,16.011,4.489,19.556-0.808c3.534-5.301,0.518-13.522-6.739-18.375c-2.833-1.886-5.885-2.958-8.779-3.281 l-24.15-9.693c0.152-0.736,0.233-1.501,0.233-2.285c0-0.147-0.041-0.287-0.046-0.432l24.531-9.852 C240.687,93.343,243.531,92.288,246.176,90.525z"></path> </g> </g> </g></svg>De Style</a>
+            
+               <button class="navbar-toggler" type="button" data-toggle="collapse"
+                   data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                   aria-expanded="false" aria-label="Toggle navigation">
+                   <span class="navbar-toggler-icon"></span>
+               </button>
+
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown"> 
+             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Discover
+             </a>
+             <ul class="dropdown-menu">
+                 
+               <li><a class="dropdown-item" href="About.aspx"><i class="fa-solid fa-circle-info fa-lg" style="color: #B197FC;"></i>&nbsp&nbsp About the Page</a></li>
+               <li><a class="dropdown-item" href="Testimonials.aspx"><i class="fa-solid fa-star fa-lg" style="color: #4c7bc8;"></i>&nbsp&nbsp Testimonials</a></li>
+              </ul>
+            </li>
+           <li class="nav-item active">
+             <a class="nav-link" href="Review.aspx">Write a Review</a>
+            </li>
+          </ul>
+
+
+            <ul class="navbar-nav ">
+                <li class="nav-items active">
+                    <asp:LinkButton Class="nav-link" ID="LinkButton4" runat="server"
+                        OnClick="LinkButton4_Click"
+                       >User Login</asp:LinkButton>
+                 </li>
+
+                 <li class="nav-item active">
+                     <asp:LinkButton CssClass="nav-link" ID="LinkButton1" runat="server" OnClick="LinkButton1_Click"
+                        >Sign Up</asp:LinkButton>
+                 </li>
+                  <li class="nav-item active">
+                      <asp:LinkButton CssClass="nav-link" ID="LinkButton2" runat="server" Visible="false" OnClick="LinkButton2_Click"
+                        >Logout</asp:LinkButton>
+                  </li>
+
+
+
+                <li class="avatar" >
+                    <asp:ImageButton ID="ImageButton1" runat="server" ImageUrl="images/avatar_1.jpg" style="width: 60px; height: 60px; margin: auto;border-radius: 100%;
+                 border: 1px solid red; " visible="false"/> 
+                </li>
+                   <li>
+                      <asp:LinkButton CssClass="nav-link" ID="LinkButton3" runat="server" Visible="false"
+                         >Hello User</asp:LinkButton>
+                   </li>
+            </ul>
+       </div>
+
+
+          </nav>
+        </div>
+
+        <!--Main Content PlaceHolder-->
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        <footer>
+             <div id="footer1" class="container-fluid">
+                 <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                        <p>
+                            <asp:LinkButton class="footerlinks" ID="LinkButton6" runat="server" OnClick="LinkButton6_Click"
+                                >Salon Owner Login</asp:LinkButton> &nbsp &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton11" runat="server" OnClick="LinkButton11_Click" Visible="false"
+                                >Employee Management</asp:LinkButton>&nbsp &nbsp;
+                            <asp:LinkButton class="footerlinks" ID="LinkButton12" runat="server" OnClick="LinkButton12_Click" Visible="false"
+                                >Customer Management</asp:LinkButton>&nbsp &nbsp;
+                        </p>
+                        
+                    </div>
+                 </div>
+
+             </div>
+                <div id="footer2" class="container-fluid">
+                    <div class="row">
+                       <div class="col-xs-12 col-sm-12 col-md-12 text-center">
+                           <p style="color:whitesmoke">&copy All right Reversed. 
+                              @ 2024 De Style</p>
+                       </div>
+                    </div>
+                </div>
+        </footer>
+    </form>
+</body>
+</html>
