@@ -15,6 +15,26 @@
                 });
         });
    </script>
+
+    <style>
+    .gridview-wrap {
+        white-space: pre-wrap; /* or pre-wrap, depending on your preference */
+    }
+    .star_icon{
+        width:100px;
+    
+    }
+    
+    .fas.fa-star.selected {
+        color: orange;
+    }
+    .far.fa-star {
+        color: grey;
+    }
+
+
+</style>
+
          
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -172,12 +192,12 @@
                                     <asp:BoundField DataField="User ID" HeaderText="User ID" /> 
                                  <asp:TemplateField HeaderText="Star Rating">
                                <ItemTemplate>
-                            <div>
+                            <div class="star_icon">
                                <%# GetStarIcons(Eval("Star_icon")) %>
                            </div>
                          </ItemTemplate>
                    </asp:TemplateField> 
-                       <asp:BoundField DataField="Expl_Comm" HeaderText="Comment" />
+                       <asp:BoundField DataField="Expl_Comm" HeaderText="Comment"  ItemStyle-CssClass="gridview-wrap"/>
                 </Columns>
                </asp:GridView>
                             

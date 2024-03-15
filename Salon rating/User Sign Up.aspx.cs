@@ -111,7 +111,10 @@ namespace Salon_rating
                 cmdStar.Parameters.AddWithValue("@UserID", userId);
                 cmdStar.ExecuteNonQuery();
                 con.Close();
-                Response.Write("<script>alert('Sign Up Successful. Go to User Login to login');</script>");
+
+                // Show the success message
+                lblMessage.Visible = true;
+        
             }
             catch (Exception ex)
             {

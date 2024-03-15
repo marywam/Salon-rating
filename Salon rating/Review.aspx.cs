@@ -17,6 +17,8 @@ namespace Salon_rating
         string strcon = ConfigurationManager.ConnectionStrings["con"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+           
+           
 
         }
 
@@ -30,15 +32,19 @@ namespace Salon_rating
                 // Get the comment
                 string comment = TextBox1.Text;
 
-
+               
 
                 // Get the user ID
                 string userId = GetUserId();
 
-
+                // Encode the comment to handle special characters
+                string encodedComment = HttpUtility.HtmlEncode(comment);
 
                 // Save the rating and comment to the database
-                SaveRatingAndCommentToDatabase(selectedRating, comment, userId);
+                SaveRatingAndCommentToDatabase(selectedRating, encodedComment, userId);
+
+                // Rebind the GridView to reflect the updated data
+                GridView2.DataBind();
 
                 // Save the selected rating to the hidden field
                 SelectedRatingHiddenField.Value = selectedRating;
@@ -51,7 +57,7 @@ namespace Salon_rating
             }
         }
 
-        private void SaveRatingAndCommentToDatabase(string selectedRating, string comment, string userId)
+        private void SaveRatingAndCommentToDatabase(string selectedRating, string encodedComment, string userId)
         {
 
 
@@ -74,9 +80,11 @@ namespace Salon_rating
                 // Create a SqlCommand object with the query and connection
                 SqlCommand cmd = new SqlCommand(query, con);
 
+               
+
                 // Add parameters to the SqlCommand object
                 cmd.Parameters.AddWithValue("@Star_icon", ratingBytes);
-                cmd.Parameters.AddWithValue("@Expl_Comm", comment);
+                cmd.Parameters.AddWithValue("@Expl_Comm", encodedComment);
                 cmd.Parameters.AddWithValue("@UserID", userId);
 
 
@@ -118,7 +126,7 @@ namespace Salon_rating
                 {
                     if (i <= selectedRating)
                     {
-                        htmlBuilder.Append("<i class='fas fa-star'></i>");
+                        htmlBuilder.Append("<i class='fas fa-star selected'></i>");
                     }
                     else
                     {

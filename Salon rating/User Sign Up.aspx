@@ -185,4 +185,7 @@
         </div>
     </div>  
 
+    <asp:Label ID="lblMessage" runat="server" Visible="false" ForeColor="Green" Text="Successfully registered"></asp:Label>
+
+
 </asp:Content>

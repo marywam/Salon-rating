@@ -7,7 +7,7 @@
     <section >
         <div id="carouselExampleDark" class="carousel carousel-dark slide">
       <div class="carousel-indicators">
-       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+       <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"  aria-label="Slide 1"></button>
        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
        <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
      </div>
@@ -62,7 +62,7 @@
               <img style= "height: 300px;" src="images/spa_person.jpg" class="card-img-top" alt="..." />
             <div class="card-body">
               <div class="star">
-               <i  style="color: orange;"class="fa-solid fa-star"></i>
+               <i style="color: orange;"class="fa-solid fa-star"></i>
                <i style="color: orange;" class="fa-solid fa-star"></i>
                <i style="color: orange;" class="fa-solid fa-star"></i>
                <i style="color: orange;" class="fa-solid fa-star"></i>
@@ -113,9 +113,9 @@
             <div class="card">
                 <img src="images/Hair-stylist.jpg" class="card-img-top" alt="..."/>
              <div class="card-body">
-               <h5 class="card-title">Hair Dressing for women</h5>
-               <p class="card-text">Ut dolor quam, ultrices non eros at, maximus imperdiet metus. Sed pellentesque id nisl et tempus.</p>
-               <a href="#" class="btn btn-primary">Check Out More</a>
+               <h5 class="card-title">Hair Dressing </h5>
+               <p class="card-text">We offer exclusive services on hair and would like to give you the best because you deserve it  .</p>
+               <a href="Destyle Hairdresser.aspx" class="btn btn-primary">Check Out More</a>
               </div>
             </div>
           </div>
@@ -123,9 +123,11 @@
             <div class="card" >
                 <img src="images/HOTELSPAWISA.jpg" class="card-img-top" alt="..."/>
              <div class="card-body">
-                <h5 class="card-title">Manicure Nails</h5>
-                <p class="card-text">Ut dolor quam, ultrices non eros at, maximus imperdiet metus. Sed pellentesque id nisl et tempus.</p>
-                <a href="#" class="btn btn-primary">Check Out More</a>
+                <h5 class="card-title">Spa and Beauty</h5>
+                <p class="card-text">At our spa and beauty sanctuary, we believe in the transformative power of self-care 
+                    and relaxation. Nestled in a serene oasis, our sanctuary offers a haven where you can escape the hustle and bustle of everyday life and indulge
+                    in a world of tranquility and rejuvenation.</p>
+                <a href="spa.aspx" class="btn btn-primary">Check Out More</a>
               </div>
             </div>
           </div>
@@ -133,9 +135,9 @@
             <div class="card" >
                 <img src="images/nail-polish-manicure-and-makeup.jpg" class="card-img-top" alt="..."/>
              <div class="card-body">
-                <h5 class="card-title">Spa and beauty</h5>
-                <p class="card-text" style=" font-family: 'Poppins', sans-serif !important;">Ut dolor quam, ultrices non eros at, maximus imperdiet metus. Sed pellentesque id nisl et tempus.</p>
-                <a href="#" class="btn btn-primary">Check out More</a>
+                <h5 class="card-title">Manicure Nails</h5>
+                <p class="card-text" style=" font-family: 'Poppins', sans-serif !important;"></p>
+                <a  href="#" class="btn btn-primary">Check out More</a>
               </div>
             </div>
           </div>

@@ -88,6 +88,7 @@
     <Content Include="Customer Management.aspx" />
     <Content Include="Datatables\css\dataTables.dataTables.min.css" />
     <Content Include="Datatables\js\dataTables.min.js" />
+    <Content Include="Destyle Hairdresser.aspx" />
     <Content Include="Employee Management .aspx" />
     <Content Include="font awesome\css\all.css" />
     <Content Include="font awesome\css\all.min.css" />
@@ -2170,23 +2171,32 @@
     <Content Include="images\Background_3.jpg" />
     <Content Include="images\cute.jpg" />
     <Content Include="images\dp_1.jpg" />
+    <Content Include="images\dye.jpg" />
     <Content Include="images\eye_lashes.jpg" />
     <Content Include="images\girl.jpg" />
     <Content Include="images\Hair-stylist.jpg" />
+    <Content Include="images\haircutafrican.jpg" />
     <Content Include="images\hair_cut.jpg" />
     <Content Include="images\HOTELSPAWISA.jpg" />
+    <Content Include="images\massage spa.jpg" />
     <Content Include="images\nail-polish-manicure-and-makeup.jpg" />
     <Content Include="images\nails.jpg" />
     <Content Include="images\pattern_1.jpg" />
     <Content Include="images\pic-1.jpg" />
     <Content Include="images\pic-2.jpeg" />
     <Content Include="images\pic-3.jpg" />
+    <Content Include="images\spa-treatments-beer-bath-hydrotherapy.jpg" />
+    <Content Include="images\spa-treatments-facial.jpg" />
     <Content Include="images\spa_1.jpg" />
     <Content Include="images\spa_person.jpg" />
+    <Content Include="images\styling.jpg" />
     <Content Include="images\white star.jpg" />
+    <Content Include="images\Wig Installation.jpg" />
     <Content Include="images\yellow star.jpg" />
+    <Content Include="Nails.aspx" />
     <Content Include="Review.aspx" />
     <Content Include="Salon Owner Login.aspx" />
+    <Content Include="spa.aspx" />
     <Content Include="Sprite.aspx" />
     <Content Include="Testimonials.aspx" />
     <Content Include="User Login.aspx" />
@@ -2210,6 +2220,13 @@
     <Compile Include="Customer Management.aspx.designer.cs">
       <DependentUpon>Customer Management.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Destyle Hairdresser.aspx.cs">
+      <DependentUpon>Destyle Hairdresser.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Destyle Hairdresser.aspx.designer.cs">
+      <DependentUpon>Destyle Hairdresser.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Employee Management .aspx.cs">
       <DependentUpon>Employee Management .aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2223,6 +2240,13 @@
     </Compile>
     <Compile Include="Home Page.aspx.designer.cs">
       <DependentUpon>Home Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Nails.aspx.cs">
+      <DependentUpon>Nails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Nails.aspx.designer.cs">
+      <DependentUpon>Nails.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Review.aspx.cs">
@@ -2245,6 +2269,13 @@
     </Compile>
     <Compile Include="Site1.Master.designer.cs">
       <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="spa.aspx.cs">
+      <DependentUpon>spa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="spa.aspx.designer.cs">
+      <DependentUpon>spa.aspx</DependentUpon>
     </Compile>
     <Compile Include="Sprite.aspx.cs">
       <DependentUpon>Sprite.aspx</DependentUpon>
