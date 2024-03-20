@@ -24,15 +24,26 @@ namespace Salon_rating
         protected void Button1_Click(object sender, EventArgs e)
         {
 
-            if (checkCustomerExist())
+
+
+
+            // Check if all fields are filled
+            if (!ValidateFields())
+            {
+                Response.Write("<script>alert('Fill all the fields');</script>");
+            }
+            else if (checkCustomerExist())
             {
                 Response.Write("<script>alert('Member Already Exist with this User ID. Try another ID');</script>");
             }
             else
             {
+                // Proceed with the sign-up process
                 signUpNewCustomer();
+                Response.Write("<script>alert('You have successfully signed up, You can now LogIn');</script>");
             }
-            //Response.Write("<script>alert('Testing');</script>");
+            
+            
         }
 
         //user defined method
@@ -111,10 +122,8 @@ namespace Salon_rating
                 cmdStar.Parameters.AddWithValue("@UserID", userId);
                 cmdStar.ExecuteNonQuery();
                 con.Close();
+                
 
-                // Show the success message
-                lblMessage.Visible = true;
-        
             }
             catch (Exception ex)
             {
@@ -124,7 +133,32 @@ namespace Salon_rating
 
         }
 
-       
+
+        private bool ValidateFields()
+        {
+            // Check if any of the required fields is empty
+            if (string.IsNullOrWhiteSpace(TextBox3.Text) || // Full Name
+                string.IsNullOrWhiteSpace(TextBox1.Text) || // Date Of Birth
+                string.IsNullOrWhiteSpace(TextBox2.Text) || // Contact No
+                string.IsNullOrWhiteSpace(TextBox4.Text) || // Email ID
+                string.IsNullOrWhiteSpace(TextBox10.Text) || // Country
+                string.IsNullOrWhiteSpace(TextBox6.Text) || // City
+                string.IsNullOrWhiteSpace(TextBox7.Text) || // Pin Code
+                string.IsNullOrWhiteSpace(TextBox5.Text) || // Full Address
+                string.IsNullOrWhiteSpace(TextBox8.Text) || // User ID
+                string.IsNullOrWhiteSpace(TextBox9.Text))   // Password
+            {
+                // If any field is empty, display an error message
+                Response.Write("<script>alert('Please fill in all the fields.');</script>");
+                return false;
+            }
+
+            // If all fields are filled, return true
+            return true;
+        }
+
+
+
 
     }
 }

@@ -38,26 +38,34 @@
  
             <div class="mb-3">
                 <asp:Label ID="Label1" runat="server" Text="Label"  for="exampleName" class="form-label">Your Name</asp:Label>
-                <input id="Text1" type="text" class="form-control" aria-describedby="fullname" />
+                <asp:TextBox ID="TextBox1"  class="form-control" aria-describedby="fullname"  runat="server"  onblur="validateYourName()" ClientIDMode="Static"></asp:TextBox>
+                <span id="nameError" style="color: red;"></span>
                 <div id="name" class="form-text">We'll never share your name with anyone else.</div>
            </div>
             <div class="mb-3">
                 <asp:Label ID="Label2" runat="server" Text="Label"  for="exampleInputEmail1" class="form-label">Email address</asp:Label>
-                <input id="Text2" type="text" class="form-control" aria-describedby="emailHelp" />
-    
+                <asp:TextBox ID="TextBox2" class="form-control" aria-describedby="emailHelp" runat="server" onblur="validateEmail()" ClientIDMode="Static" ></asp:TextBox>
+                  <span id="emailError" style="color: red;"></span>
+                
              <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
             </div>
        <div class="mb-3">
            <asp:Label ID="Label3" runat="server" Text="Label" for="exampleNumber" class="form-label">Phone Number</asp:Label>
-           <input id="Text3" type="text" class="form-control"  aria-describedby="Phone Number"/>
+           <asp:TextBox ID="TextBox3" class="form-control"  aria-describedby="Phone Number" runat="server" onblur="validateContactNo()" ClientIDMode="Static"></asp:TextBox>
+              <span id="contactNoError" style="color: red;"></span>
+      
          <div id="Phonenumber" class="form-text">We'll never share your phone number with anyone else.</div>
       </div>
 
        <div class="mb-3">
-           <asp:Label ID="Label4" runat="server" Text="Label" for="exampleFormControlTextarea1" class="form-label">Message</asp:Label>
-           <textarea id="TextArea1" cols="20" rows="2" class="form-control" id="exampleFormControlTextarea1"></textarea>
+           <label class="form-label">Message</label>
+           <div class="form-group">
+           
+           <asp:TextBox CssClass="form-control" ID="TextBox4" runat="server"  placeholder="Message" TextMode="MultiLine" Rows="2" onblur="validateMessage()" ClientIDMode="Static"></asp:TextBox>
+               <span id="messageError" style="color: red;"></span>
+          </div> 
        </div>
-           <asp:Button ID="Button1" runat="server" type="submit" Text="Submit" class="btn btn-primary" />
+           <asp:Button ID="Button1" runat="server" type="submit" Text="Submit" class="btn btn-primary" OnClick="Button1_Click" />
  
        </form>
     </div>
@@ -79,4 +87,83 @@
       </div>
     </div>
    
+    <script>
+
+        //Validation for Your _name
+        function validateYourName() {
+            var nameInput = document.getElementById('TextBox1');
+            var nameError = document.getElementById('nameError');
+            var name = nameInput.value.trim();
+
+            if (name === '') {
+                nameError.textContent = 'Your Name is required.';
+            } else {
+                nameError.textContent = '';
+            }
+        }
+
+        //Validation for Email
+        function validateEmail() {
+            var emailInput = document.getElementById('TextBox2');
+            var emailError = document.getElementById('emailError');
+            var email = emailInput.value.trim();
+
+            // Check if the email address is empty
+            if (email === '') {
+                emailError.textContent = 'Email ID is required.';
+                return; // Stop further validation
+            }
+
+            // Regular expression to validate an email address format
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+            // Check if the email address matches the regex pattern
+            if (!emailRegex.test(email)) {
+                emailError.textContent = 'Please enter a valid email address.';
+                return; // Stop further validation
+            }
+
+            // If all validations pass, clear the error message
+            emailError.textContent = '';
+        }
+
+        //Validation of Contact No
+        function validateContactNo() {
+            var contactNoInput = document.getElementById('TextBox3');
+            var contactNoError = document.getElementById('contactNoError');
+            var contactNo = contactNoInput.value.trim();
+
+            // Check if the contact number is empty
+            if (contactNo === '') {
+                contactNoError.textContent = 'Contact No is required.';
+                return; // Stop further validation
+            }
+
+            // Regular expression to validate a phone number (10 digits)
+            var phoneRegex = /^\d{10}$/;
+
+            // Check if the contact number matches the regex pattern
+            if (!phoneRegex.test(contactNo)) {
+                contactNoError.textContent = 'Please enter a valid 10-digit phone number.';
+                return; // Stop further validation
+            }
+
+            // If all validations pass, clear the error message
+            contactNoError.textContent = '';
+        }
+
+        //Validation for Message Text Area
+        function validateMessage() {
+            var messageInput = document.getElementById('TextBox4');
+            var messageError = document.getElementById('messageError');
+            var message = messageInput.value.trim();
+
+            if (message === '') {
+                messageError.textContent = 'Message is required.';
+            } else {
+                messageError.textContent = '';
+            }
+        }
+
+    </script>
 </asp:Content>

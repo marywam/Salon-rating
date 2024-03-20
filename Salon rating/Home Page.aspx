@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home Page.aspx.cs" Inherits="Salon_rating.Home_Page" %>
+﻿    <%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Home Page.aspx.cs" Inherits="Salon_rating.Home_Page" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/Home.css" rel="stylesheet" />
 </asp:Content>
@@ -114,7 +114,9 @@
                 <img src="images/Hair-stylist.jpg" class="card-img-top" alt="..."/>
              <div class="card-body">
                <h5 class="card-title">Hair Dressing </h5>
-               <p class="card-text">We offer exclusive services on hair and would like to give you the best because you deserve it  .</p>
+               <p class="card-text">We offer exclusive services on hair and would like to give you the best because you deserve it .
+                   From cutting and styling to coloring and treatments,  our skilled hairdressers are trained to enhance your hair's natural beauty and bring your vision to life.
+               </p>
                <a href="Destyle Hairdresser.aspx" class="btn btn-primary">Check Out More</a>
               </div>
             </div>
@@ -136,8 +138,10 @@
                 <img src="images/nail-polish-manicure-and-makeup.jpg" class="card-img-top" alt="..."/>
              <div class="card-body">
                 <h5 class="card-title">Manicure Nails</h5>
-                <p class="card-text" style=" font-family: 'Poppins', sans-serif !important;"></p>
-                <a  href="#" class="btn btn-primary">Check out More</a>
+                <p class="card-text" style=" font-family: 'Poppins', sans-serif !important;">A manicure is a comprehensive nail treatment designed 
+                    to enhance the appearance and health of your nails and hands. 
+                   </p>
+                <a  href="Nails.aspx" class="btn btn-primary">Check out More</a>
               </div>
             </div>
           </div>
@@ -145,9 +149,9 @@
            <div class="card">
                <img src="images/eye_lashes.jpg" class="card-img-top" alt="..." />
              <div class="card-body">
-                <h5 class="card-title">Barber</h5>
-                <p class="card-text">Ut dolor quam, ultrices non eros at, maximus imperdiet metus. Sed pellentesque id nisl et tempus.</p>
-                <a href="#" class="btn btn-primary">Check out More</a>
+                <h5 class="card-title">Eye Lashes</h5>
+                <p class="card-text">"The application of eyelash extensions to add length,volume,and definition to the natural lashes. </p>
+                <a href="lash.aspx" class="btn btn-primary">Check out More</a>
               </div>
            </div>
           </div>
@@ -165,11 +169,11 @@
          <hr>
          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam condimentum sed felis a sollicitudin. Nulla a auctor orci. Curabitur at pretium augue. Donec eget elit dignissim, sodales mi sed, lacinia massa. Etiam fermentum, dui a congue blandit, odio eros interdum libero, et pharetra sapien est non mi. Aliquam hendrerit venenatis eleifend. Aliquam turpis dolor, lobortis et facilisis id, tempus quis justo. Nunc ultrices, massa eget porttitor ultricies, enim tellus aliquam odio, pellentesque ullamcorper ex mi sit amet erat. Nunc a massa ut mauris pulvinar pellentesque id vel diam. Morbi nisl diam, volutpat dignissim facilisis et, congue at sapien. Integer vulputate lorem enim, id volutpat tellus fermentum ac. Morbi pharetra facilisis
             nisl, sed elementum nulla gravida et. Praesent nec diam facilisis, mollis mauris sed, <br>
-           <button class="btn btn-primary" style="margin-left: 260px;"><a href="#">Learn More</a></button>
+           <button class="btn btn-primary" style="margin-left: 260px;"><a href="About.aspx">Learn More</a></button>
           </p>
         </div>
       </div>
     </div>
     </section>
-    </i></i>
+    
 </asp:Content>

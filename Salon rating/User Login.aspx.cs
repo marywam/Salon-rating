@@ -59,7 +59,10 @@ namespace Salon_rating
             {
                 Response.Write("<script>alert('" + ex.Message + "');</script>");
             }
-           // Response.Write("<script>alert('Button Click');</script>");
+            // Response.Write("<script>alert('Button Click');</script>");
+
+
+            
         }
     }
 }

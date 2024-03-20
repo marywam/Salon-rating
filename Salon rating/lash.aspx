@@ -1,6 +1,6 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="Nails.aspx.cs" Inherits="Salon_rating.Nails" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="lash.aspx.cs" Inherits="Salon_rating.lash" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <style>
+     <style>
         *{
              margin:0;
             padding:0;
@@ -38,10 +38,11 @@
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-     <p class="text_below">NAIL MENU</p> 
+    <p class="text_below">EYE LASH MENU</p> 
      <div class="container">
          <div class="nail_logo">
-         <img src="images/Nail_woman.jpg"  />
+             <img src="images/cover_lash.jpg" />
+         
          
              
 

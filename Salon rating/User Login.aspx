@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site1.Master" AutoEventWireup="true" CodeBehind="User Login.aspx.cs" Inherits="Salon_rating.User_Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
     <link href="css/UserLogin.css" rel="stylesheet" />
+
+   
+
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
          
@@ -38,13 +41,15 @@
                                 <label class="form-label">User ID</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox1" 
-                                        runat="server" placeholder="User ID"></asp:TextBox>
+                                        runat="server" placeholder="User ID" onblur="validateUserID()" ClientIDMode="Static"></asp:TextBox>
+                                     <span id="userIDError" style="color: red;"></span>
                                 </div>
 
                                 <label class="form-label">Password</label>
                                 <div class="form-group">
                                     <asp:TextBox CssClass="form-control" ID="TextBox2" 
-                                        runat="server" placeholder="Password" TextMode="Password"></asp:TextBox>
+                                        runat="server" placeholder="Password" TextMode="Password" onblur="validatePassword()" ClientIDMode="Static"></asp:TextBox>
+                                    <span id="passwordError" style="color: red;"></span>
                                 </div>
                                 <br />
 
@@ -74,6 +79,32 @@
     </div>  
 
 
+     <script>
+         function validateUserID() {
+             var userIDInput = document.getElementById('TextBox1');
+             var userIDError = document.getElementById('userIDError');
+             var userID = userIDInput.value.trim();
 
+             if (userID === '') {
+                 userIDError.textContent = 'User ID is required.';
+             }  else {
+                 userIDError.textContent = '';
+             }
+         }
+
+         function validatePassword() {
+             var passwordInput = document.getElementById('TextBox2');
+             var passwordError = document.getElementById('passwordError');
+             var password = passwordInput.value.trim();
+
+             if (password === '') {
+                 passwordError.textContent = 'Password is required.';
+             } else if (password.length < 8) {
+                 passwordError.textContent = 'Password must be at least 8 characters long.';
+             }  else {
+                 passwordError.textContent = '';
+             }
+         }
+</script>
 </asp:Content>
 

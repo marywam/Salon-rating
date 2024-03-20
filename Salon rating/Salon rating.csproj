@@ -2169,6 +2169,7 @@
     <Content Include="images\avatar_1.jpg" />
     <Content Include="images\Background_2.jpg" />
     <Content Include="images\Background_3.jpg" />
+    <Content Include="images\cover_lash.jpg" />
     <Content Include="images\cute.jpg" />
     <Content Include="images\dp_1.jpg" />
     <Content Include="images\dye.jpg" />
@@ -2181,6 +2182,7 @@
     <Content Include="images\massage spa.jpg" />
     <Content Include="images\nail-polish-manicure-and-makeup.jpg" />
     <Content Include="images\nails.jpg" />
+    <Content Include="images\Nail_woman.jpg" />
     <Content Include="images\pattern_1.jpg" />
     <Content Include="images\pic-1.jpg" />
     <Content Include="images\pic-2.jpeg" />
@@ -2193,6 +2195,7 @@
     <Content Include="images\white star.jpg" />
     <Content Include="images\Wig Installation.jpg" />
     <Content Include="images\yellow star.jpg" />
+    <Content Include="lash.aspx" />
     <Content Include="Nails.aspx" />
     <Content Include="Review.aspx" />
     <Content Include="Salon Owner Login.aspx" />
@@ -2213,6 +2216,7 @@
     <Compile Include="About.aspx.designer.cs">
       <DependentUpon>About.aspx</DependentUpon>
     </Compile>
+    <Compile Include="AuthorizeAttribute.cs" />
     <Compile Include="Customer Management.aspx.cs">
       <DependentUpon>Customer Management.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -2240,6 +2244,13 @@
     </Compile>
     <Compile Include="Home Page.aspx.designer.cs">
       <DependentUpon>Home Page.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="lash.aspx.cs">
+      <DependentUpon>lash.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="lash.aspx.designer.cs">
+      <DependentUpon>lash.aspx</DependentUpon>
     </Compile>
     <Compile Include="Nails.aspx.cs">
       <DependentUpon>Nails.aspx</DependentUpon>

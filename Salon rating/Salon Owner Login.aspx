@@ -38,14 +38,16 @@
                                 <div class="form-group">
                                     <label class="form-label" for="<%= TextBox1.ClientID %>">Salon Owner ID</label>
                                     <asp:TextBox CssClass="form-control" ID="TextBox1"  
-                                        runat="server" placeholder="Salon Owner ID"></asp:TextBox>
+                                        runat="server" placeholder="Salon Owner ID" onblur="validateSalonOwnerID()" ClientIDMode="Static"></asp:TextBox>
+                                     <span id="salonOwnerIDError" style="color: red;"></span>
                                 </div>
 
                                 
                                 <div class="form-group">
                                     <label class="form-label" for="<%= TextBox2.ClientID %>">Password</label>
                                     <asp:TextBox CssClass="form-control" ID="TextBox2" 
-                                        runat="server" placeholder="Password" TextMode="Password" AutoPostBack="False"></asp:TextBox>
+                                        runat="server" placeholder="Password" TextMode="Password" AutoPostBack="False" onblur="validatePassword()" ClientIDMode="Static" ></asp:TextBox>
+                                     <span id="passwordError" style="color: red;"></span>
                                 </div>
                                 <br />
 
@@ -68,5 +70,51 @@
                 
             </div>
         </div>
-    </div>  
+    </div> 
+    
+
+    <script>
+        //Validation for  salon Owner ID
+        function validateSalonOwnerID() {
+            var salonOwnerIDInput = document.getElementById('TextBox1');
+            var salonOwnerIDError = document.getElementById('salonOwnerIDError');
+            var salonOwnerID = salonOwnerIDInput.value.trim();
+
+            // Check if the salon owner ID field is empty
+            if (salonOwnerID === '') {
+                salonOwnerIDError.textContent = 'Salon Owner ID is required.';
+                return; // Stop further validation
+            }
+
+            // Regular expression to validate the salon owner ID (letters, numbers, and spaces only)
+            var salonOwnerIDRegex = /^[a-zA-Z0-9\s]+$/;
+
+            // Check if the salon owner ID matches the regex pattern
+            if (!salonOwnerIDRegex.test(salonOwnerID)) {
+                salonOwnerIDError.textContent = 'Salon Owner ID can only contain letters, numbers, and spaces.';
+                return; // Stop further validation
+            }
+
+            // If all validations pass, clear the error message
+            salonOwnerIDError.textContent = '';
+        }
+
+        //Validation for Password
+        function validatePassword() {
+            var passwordInput = document.getElementById('TextBox2');
+            var passwordError = document.getElementById('passwordError');
+            var password = passwordInput.value.trim();
+
+            if (password === '') {
+                passwordError.textContent = 'Password is required.';
+            } else if (password.length < 7) {
+                passwordError.textContent = 'Password must be at least 8 characters long.';
+            } else if (!/^[a-zA-Z]+$/.test(password)) {
+                passwordError.textContent = 'Password must contain only alphabetic characters.';
+            } else {
+                passwordError.textContent = '';
+                   }
+        }
+
+    </script>
 </asp:Content>
